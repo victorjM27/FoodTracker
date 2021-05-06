@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="stacked">Nombre de usuario</ion-label>
+    <ion-input placeholder="Ingrese nombre de usuario" type ="text"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="stacked">Constraseña</ion-label>
+    <ion-input placeholder="Ingrese constraseña" type="password"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" color="success" [routerLink]="['/tabs/home']">
+    <ion-icon slot="start" name="person-outline"></ion-icon> 
+    Login     
+  </ion-button>
+
+</ion-content>

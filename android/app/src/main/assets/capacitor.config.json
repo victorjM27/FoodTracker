@@ -1,0 +1,13 @@
+{
+  "appId": "com.cpd.foodapp",
+  "appName": "foodapp",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
