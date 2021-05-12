@@ -31,11 +31,7 @@ const routes: Routes = [
   {
     path: 'editpassw',
     loadChildren: () => import('./editpassw/editpassw.module').then( m => m.EditpasswPageModule)
-  },
-  {
-    path: 'edit-pinfo',
-    loadChildren: () => import('./edit-pinfo/edit-pinfo.module').then( m => m.EditPinfoPageModule)
-  },
+  }, 
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
@@ -43,6 +39,10 @@ const routes: Routes = [
   {
     path: 'inicial',
     loadChildren: () => import('./inicial/inicial.module').then( m => m.InicialPageModule)
+  },  
+  {
+    path: 'editinfo',
+    loadChildren: () => import('./editinfo/editinfo.module').then( m => m.EditinfoPageModule)
   },
 ];
 

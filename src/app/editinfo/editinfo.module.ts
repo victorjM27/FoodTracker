@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { EditPinfoPageRoutingModule } from './edit-pinfo-routing.module';
+import { EditinfoPageRoutingModule } from './editinfo-routing.module';
 
-import { EditPinfoPage } from './edit-pinfo.page';
+import { EditinfoPage } from './editinfo.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    EditPinfoPageRoutingModule
+    EditinfoPageRoutingModule
   ],
-  declarations: [EditPinfoPage]
+  declarations: [EditinfoPage]
 })
-export class EditPinfoPageModule {}
+export class EditinfoPageModule {}

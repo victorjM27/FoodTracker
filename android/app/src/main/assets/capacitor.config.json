@@ -1,5 +1,5 @@
 {
-  "appId": "com.cpd.foodapp",
+  "appId": "io.ionic.starter",
   "appName": "foodapp",
   "bundledWebRuntime": false,
   "npmClient": "npm",
