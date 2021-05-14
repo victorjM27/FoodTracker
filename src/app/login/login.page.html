@@ -6,19 +6,29 @@
 
 <ion-content>
 
-  <ion-item>
-    <ion-label position="stacked">Nombre de usuario</ion-label>
-    <ion-input placeholder="Ingrese nombre de usuario" type ="text"></ion-input>
-  </ion-item>
-  
-  <ion-item>
-    <ion-label position="stacked">Constraseña</ion-label>
-    <ion-input placeholder="Ingrese constraseña" type="password"></ion-input>
-  </ion-item>
+  <form [formGroup]="loginForm" (ngSubmit)="iniciarSesion(loginForm.value)">  
 
-  <ion-button expand="full" color="success" [routerLink]="['/tabs/home']">
-    <ion-icon slot="start" name="person-outline"></ion-icon> 
-    Login     
-  </ion-button>
+    <ion-item>
+      <ion-label position="stacked">email</ion-label>
+      <ion-input formControlName="email" placeholder="Type your email" type="text"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input type="password" #password required class="input"  placeholder="Type password" 
+      formControlName="password"></ion-input>
+    </ion-item>
+       
+        
+    <ion-button type="submit" expand="full"  color="success">
+      <ion-icon slot="start" name="person-add"></ion-icon>
+      Log In
+    </ion-button>
+
+    <ion-toolbar *ngIf = "mostrarMensajeError">
+      Wrong username or password
+    </ion-toolbar>
+  
+  </form>
 
 </ion-content>

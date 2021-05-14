@@ -4,25 +4,21 @@ import {Plugins, CameraResultType, CameraSource, Geolocation, Camera } from "@ca
 
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.page.html',
-  styleUrls: ['./profile.page.scss'],
+  selector: 'app-addrecipe',
+  templateUrl: './addrecipe.page.html',
+  styleUrls: ['./addrecipe.page.scss'],
 })
-export class ProfilePage implements OnInit {
+export class AddrecipePage implements OnInit {
 
   imagenUsuario = "assets/profiledefault.jpg";
   foto:SafeResourceUrl;
-  // action-sheets para determinar las acciones del usuario.
-  // const button = document.querySelector('ion-button');
-  // button.addEventListener('click', handleButtonClick);
 
   constructor(private sanitize: DomSanitizer) { }
 
   ngOnInit() {
   }
-// Funcion para tomar foto/ utilizar hardware del dispositivo.
 
-  async tomarFoto(){
+  async tomarfoto(){
     const imagen = await Plugins.Camera.getPhoto({
       quality: 100,
       allowEditing: false,
@@ -33,8 +29,17 @@ export class ProfilePage implements OnInit {
     this.foto = this.sanitize.bypassSecurityTrustResourceUrl(imagen && imagen.dataUrl);
   }
 
-// Funcion para desplegar acciones en la pagina profile.
-
-
+  // formSubmit() {
+  //   if (!this.CrearReceta.valid) {
+  //     return false;
+  //   } else {
+  //     this.aptService.createReceta(this.CrearReceta.value).then(res => {
+  //       console.log(res)
+  //       this.CrearReceta.reset();
+  //       this.router.navigate(['/tabs/recetas-guardadas']);
+  //     })
+  //       .catch(error => console.log(error));
+  //   }
+  // }
 
 }

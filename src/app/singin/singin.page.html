@@ -6,30 +6,37 @@
 
 <ion-content>
 
-  <ion-item>
-    <ion-label position="stacked">User name</ion-label>
-    <ion-input placeholder="Type User name" type="text"></ion-input>
-  </ion-item>
-  
-  <ion-item>
-    <ion-label position="stacked">Password</ion-label>
-    <ion-input type="password" placeholder="Type password"></ion-input>
-  </ion-item>
-  
-  <ion-item>
-    <ion-label position="stacked">Confirm password</ion-label>
-    <ion-input type="password" placeholder="Confirm password"></ion-input>
+  <form [formGroup]="singinForm" (ngSubmit)="iniciarSesion(loginForm.value)">  
+
+    <ion-item>
+      <ion-label position="stacked">User name</ion-label>
+      <ion-input formControlName="email" placeholder="Type User name" type="text"></ion-input>
     </ion-item>
-  
+    
+    <ion-item>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input type="password" #password required class="input"  placeholder="Type password"></ion-input>
+    </ion-item>
+    
+    <ion-item  id="cj1" color="transparent"  lines="none">
+      <ion-icon name="at-circle-outline" slot="start"></ion-icon>
+      <ion-input id="user" #email required type="text" class="input" placeholder="Usuario">
+      </ion-input>
+    </ion-item>
+    
+    
     <ion-item>
       <ion-label position="stacked"> Date of birth </ion-label>
       <ion-datetime  value="1990-01-01" placeholder="Select date"></ion-datetime>
-    </ion-item>
+   </ion-item>
+    
+    <ion-button type="submit" expand="full"  color="success">
+      <ion-icon slot="start" name="person-add"></ion-icon>
+      Sign Up
+    </ion-button>
   
-    <ion-button expand="full"  color="success">
-  
-       <ion-icon slot="start" name="person-add"></ion-icon>
-  
-      New User</ion-button>
+  </form>
 
 </ion-content>
+
+
