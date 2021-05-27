@@ -10,13 +10,14 @@ import {Plugins, CameraResultType, CameraSource, Geolocation, Camera } from "@ca
 })
 export class AddrecipePage implements OnInit {
 
-  imagenUsuario = "assets/profiledefault.jpg";
+  imagenrecetanueva = "assets/fondo-inicio.png";
   foto:SafeResourceUrl;
 
   constructor(private sanitize: DomSanitizer) { }
 
   ngOnInit() {
   }
+
 
   async tomarfoto(){
     const imagen = await Plugins.Camera.getPhoto({

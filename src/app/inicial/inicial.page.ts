@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Storage} from '@ionic/storage';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-inicial',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicialPage implements OnInit {
 
-  constructor() { }
+  constructor(private storage:Storage, private router:Router) { 
+
+    /* this.storage.get('sesioniniciada').then((result)=>{
+      console.log(result);
+      if(result===true){
+      this.router.navigateByUrl('tabs/home');
+      }
+      else{
+        this.router.navigateByUrl('tabs/home');
+      }
+    }); */
+  }
 
   ngOnInit() {
   }
 
+  
+
 }
+
+

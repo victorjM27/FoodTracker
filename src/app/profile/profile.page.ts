@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import {Plugins, CameraResultType, CameraSource, Geolocation, Camera } from "@capacitor/core";
 
+import {PopoverController} from '@ionic/angular';
+import {AddrecipePage} from '../addrecipe/addrecipe.page'
 
 @Component({
   selector: 'app-profile',
@@ -16,7 +18,7 @@ export class ProfilePage implements OnInit {
   // const button = document.querySelector('ion-button');
   // button.addEventListener('click', handleButtonClick);
 
-  constructor(private sanitize: DomSanitizer) { }
+  constructor(private sanitize: DomSanitizer,public popoverController:PopoverController,) { }
 
   ngOnInit() {
   }
@@ -35,6 +37,19 @@ export class ProfilePage implements OnInit {
 
 // Funcion para desplegar acciones en la pagina profile.
 
+async abrirPopover(ev: any ){
+  // this.alert()
+  const popover = await this.popoverController.create({
+    component: AddrecipePage,
+    cssClass: 'my-popover-class',
+    event: ev,
+    translucent: true,
+    mode:'ios'
+  });
 
+
+  return await popover.present();
+
+}
 
 }

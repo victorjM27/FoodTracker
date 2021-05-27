@@ -39,7 +39,7 @@
   
 
   
-    <ion-button color="light" id="BLout" [routerLink]="['/tab/sesion']" expand="block" shape="round">
+    <ion-button (click)='logOut()' color="light" id="BLout" [routerLink]="['/tab/sesion']" expand="block" shape="round">
       Log Out
       <ion-icon name="log-out-outline" slot="end"></ion-icon>
     </ion-button>

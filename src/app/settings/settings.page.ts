@@ -16,16 +16,7 @@ export class SettingsPage implements OnInit {
  
 
   constructor( private router:Router, private storage:Storage) {
-    /*this.storage.get('temaOscuro').then((result)=>{
-      if(result=== true){
-        document.body.setAttribute('color-theme','dark');
-        this.toggleActive=true; 
-      }
-      else{
-        document.body.setAttribute('color-theme','light');
-        this.toggleActive=false;
-      }
-    });*/
+   
 
    }
 
@@ -43,5 +34,11 @@ export class SettingsPage implements OnInit {
       this.storage.set('temaOscuro',false)
     }
   }
- 
+
+  logOut(){
+    this.storage.set('sesioniniciada',false);
+    this.router.navigateByUrl('/inicial'); 
+   }
 }
+ 
+
